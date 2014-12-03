@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Avatar Social - Página Principal</title>
+
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+
+<div class="BGFeira">
+    <div id="Content">
+    
+    	<div class="Logos">
+        	<a href="http://anje.pt" target="_blank"><img src="http://www.anje.pt/images/anje/header/logo_anje.jpg" width="100" class="Aleft" alt="Anje"/></a>
+        	<a href="http://craft-solutions.com" target="_blank"><img src="img/logo_craftsolutions.png" width="150" class="ACenter" alt="Craft-Solutions"/></a>
+        	<a href="http://feiradoempreendedor.anje.pt" target="_blank"><img src="img/logo_BornGlobal.png" width="150" class="ARight" alt="Anje"/></a>
+        </div>
+        
+        <div class="VideoAoVivo">
+		<div class="class="embed-responsive embed-responsive-16by9" id="YoutubePanel">
+            	<iframe src="//www.youtube.com/embed/IsgTpQAV0PE?autoplay=1&cc_load_policy=1&amp;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen width="705" height="325"></iframe>
+            	<!-- YOUTUBE PANEL CHANNEL GOES HERE!-->
+			</div>
+        </div>
+
+
+        <div class="partner-name">
+        	<h3 id="PartnerName"></h3>
+        </div>
+        <!-- <div class="MoreSpace"></div> -->
+        <div id="AvatarInteraction">
+            <!-- <div class="Space"></div> -->
+            <div class="btn btn-lg countdown-usage isPanel" 
+						data-toggle="popover"
+     					data-placement="top"
+     					data-trigger="focus" 
+     					data-content="Tempo máximo de uso do Avatar" style="color: white;"></div>
+			<!-- CONTROLS -->
+          <div id="AvatarControls" class="isPanel">
+            Observe o movimento do Evento no ecrã acima e interaja com os participantes. Você pode mandar mensagens, executar ações no
+            Avatar, ou até enviar um som para ser tocado pelo seu avatar. Para isso, escreva a sua mensagem e selecione a ação (ou som)
+            que deseja enviar.
+            <br/><br/>
+            <h5 id="AvatarMsgInputProblem" style="color: red; display: none;font-weight: bolder;width: 98%; text-align: center;">
+            É necessário enviar uma mensagem junto com a Ação do Avatar.
+            </h5><br/>
+            <form class="form-inline" role="form">
+              <div class="form-group">
+                <input id="AvatarMsgInput" type="text" maxlength="140" class="form-control" placeholder="Digite a Mensagem para o Avatar!"></input>
+              </div>
+              <div id="Clear"></div>
+    					<div class="form-group">
+    						<div class="btn-group dropup">
+    	  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    	    						Selecione a Ação <span class="caret"></span>
+    	  						</button>
+    	  						<!-- POSSIBLE ACTIONS -->
+    	  						<ul class="dropdown-menu" role="menu" id="SelectActionList"></ul>
+    						</div>
+    					</div>
+    					<div class="form-group">
+    						<div class="btn-group dropup">
+    	  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    	    						Selecione o Som <span class="caret"></span>
+    	  						</button>
+    	  						<ul class="dropdown-menu" role="menu" id="SelectSoundList"></ul>
+    						</div>
+    					</div>
+				    </form>
+          </div>
+        </div>
+        <div class="Title" id="AvatarSelection">
+        	<div id="SpotContainer">
+        		<div id="AdamSpot" class="btn btn-lg avatar-adamspot" 
+        							data-toggle="popover"
+        							data-placement="top" 
+        							data-trigger="focus" 
+        							data-content="Clique para incorporá-lo!" title="ADAM">
+        			<div id="AdamCountdown" class="countdown">
+        				<h6 id="AdamSpotInfo" style="font-size: 12px; font-weight: bold;"></h6>
+        			</div>
+        		</div>
+        		<div id="EveSpot" class="btn btn-lg avatar-evespot" 
+        							data-toggle="popover"
+        							data-placement="top" 
+        							data-trigger="focus" 
+        							data-content="Clique para incorporá-la!" title="EVE">
+        			<div id="EveCountdown" class="countdown">
+        				<h6 id="EveSpotInfo" style="font-size: 12px; font-weight: bold;"></h6>
+        			</div>
+        		</div>
+        		<div id="Clear"></div>
+        	</div>
+            <!-- <div class="Space"></div> -->
+            <!-- TODO: Implement -->
+            <p class="isPanel">
+            	Comece por selecionar o Avatar que deseja incorporar. Apenas uma pessoa pode impersonificar 
+            	o Avatar de cada vez, e assim se o seu Avatar estiver ocupado, ainda pode entrar na fila de espera.
+             	Faça a sua escolha, e clique no Avatar para incorporá-lo.<br/>
+                <button type="button" class="btn btn-primary btn-lg Center" data-toggle="modal" data-target="#PartnerLogin" id="LoginPartnerBtn">
+              		<b>Parceiro, Clique aqui!</b>
+              	</button>
+
+
+             <div class="Parceiros isPanel">
+                <p>Parceiros:</p>
+                <hr>
+                <img src="img/logo_anje.png">
+                <img src="img/logo_digitalframe.png">
+                <img src="img/logo_famasete.png">
+                <img src="img/logo_partteam.png">
+             </div>
+			       </p>
+          </div>
+    </div>
+</div>
+
+<div id="maskit"></div>
+<!-- MODAL DIALOGS!!! -->
+<!-- Progress Bar modal -->
+<div class="modal fade" aria-hidden="true" id="StatusBar">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+        		<h4 class="modal-title" id="TextProgressBar">Processando o seu pedido...</h4>
+      		</div>
+      		<div class="modal-body">
+      			<div class="progress">
+					<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+    	</div><!-- /.modal-content -->
+  	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- Wait for personifiction Modal -->
+<div class="modal fade" aria-hidden="true" id="Counter2Avatar">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+        		<h4 class="modal-title">Em alguns instantes poderá "Personificar o Avatar"!</h4>
+      		</div>
+      		<div class="modal-body">
+      			<p>Esta na fila para "impersonificar" o seu Avatar. Aguarde apenas mais alguns momentos, e em
+      			alguns instantes já pode incorporá-lo. O seu Avatar em:</p>
+      			<p id="WaitCounter" style="text-align: center;"></p>
+				</div>
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Sair da fila de espera!</button>
+      		</div>
+    	</div><!-- /.modal-content -->
+  	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- Partner login Modal -->
+<div class="modal fade" aria-hidden="true" role="dialog" id="PartnerLogin">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+        		<h4 class="modal-title">Partner Login</h4>
+      		</div>
+      		<div class="modal-body">
+      			<p>Faça o seu Login para personalizar seu Avatar</p>
+      			<h5 id="LoginProblem" style="color: red; display: none;font-weight: bolder;width: 98%; text-align: center;">Utilizador ou senha incorrectos</h5>
+      			<h5 id="LoginOk" style="color: green; display: none;font-weight: bolder;width: 98%; text-align: center;">Ok!</h5>
+      			<form role="form">
+      				<div class="form-group">
+				    	<input type="text" class="form-control" id="userid" placeholder="Digite seu utilizador aqui...">
+					</div>
+					<div class="form-group">
+				    	<input type="password" class="form-control" id="password" placeholder="Digite sua senha...">
+					</div>
+				</form>
+			</div>
+      		<div class="modal-footer">
+      			<button type="button" class="btn btn-primary" id="PartnerMadeLogin">Aceder</button>
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Sair!</button>
+      		</div>
+    	</div><!-- /.modal-content -->
+  	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- <center>
+<video autoplay="autoplay" width="800" height="600" id="captureCam"/>
+</center> -->
+
+
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="http://underscorejs.org/underscore-min.js"></script>
+
+<!-- Common libraries -->
+<script type="text/javascript" src="js/countdown.min.js"></script>
+<script type="text/javascript" src="js/avatarcontrol.js"></script>
+<script type="text/javascript" src="js/clientavatar.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

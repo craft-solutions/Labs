@@ -360,8 +360,8 @@ AWSHelper.prototype.addRequestToQ = function (user, queueUrl, cb) {
 	});
 };
 
-var COMMAND_INPUT_Q = 'https://sqs.eu-west-1.amazonaws.com/539168730222/AVATAR_CONTROL_IN';
-var COMMAND_OUTPUT_Q = 'https://sqs.eu-west-1.amazonaws.com/539168730222/AVATAR_CONTROL_OUT';
+var COMMAND_INPUT_Q = 'YOUR_AWS_SQS_INPUT_QUEUE';
+var COMMAND_OUTPUT_Q = 'YOUR_AWS_SQS_OUTPUT_QUEUE';
 /*
  * Add a new request to the COMMAND Queue
  */
@@ -523,7 +523,7 @@ AWSHelper.prototype.initAfter = function (awsConfig) {
 	  // Teste queue
 	  if (isDebugEnable) {
 		  console.log ('Testing the connection to the AWS SQS queues...');
-		  me.test('https://sqs.eu-west-1.amazonaws.com/539168730222/DUMMY_QUEUE');
+		  me.test('SOME_AWSSQS_Q_TO_TEST_WITH');
 	  }
 };
 AWSHelper.prototype.test = function (queueUrl) {
